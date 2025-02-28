@@ -1,38 +1,28 @@
-
-
+import { Route, Routes } from 'react-router-dom';
+import Header from '../components/header';
+import LoginPage from './loginPage';
+import ProductOverview from './home/productOverview';
+import ProductPage from './home/product';
+import Cart from './home/cart';
+import ShippingPage from './home/shipping';
+import MyOrdersPage from './home/orders';
 export default function HomePage() {
-    return (
-        <div className="home-container">
-            <header className="header">
-                <h1>Welcome to Our Website</h1>
-                <p>Your one-stop destination for quality products.</p>
-            </header>
-            <section className="content">
-                <h2>Featured Products</h2>
-                <div className="product-grid">
-                    <div className="product-card">
-                        <img src="https://via.placeholder.com/150" alt="Product 1" />
-                        <h3>Product 1</h3>
-                        <p>$29.99</p>
-                        <button>Buy Now</button>
-                    </div>
-                    <div className="product-card">
-                        <img src="https://via.placeholder.com/150" alt="Product 2" />
-                        <h3>Product 2</h3>
-                        <p>$39.99</p>
-                        <button>Buy Now</button>
-                    </div>
-                    <div className="product-card">
-                        <img src="https://via.placeholder.com/150" alt="Product 3" />
-                        <h3>Product 3</h3>
-                        <p>$49.99</p>
-                        <button>Buy Now</button>
-                    </div>
-                </div>
-            </section>
-            <footer className="footer">
-                <p>© 2025 YourCompany. All rights reserved.</p>
-            </footer>
-        </div>
-    );
+  return (
+    <div className="h-screen w-full">
+      <Header />
+      <div className='w-full h-[calc(100vh-100px)] '>
+        <Routes path="/*">
+          <Route path="/" element={<h1>Home Page</h1>} />
+          <Route path="/products" element={<ProductPage/>} />
+          <Route path="/login" element={<LoginPage/>} />
+
+          <Route path="/cart" element={<Cart/>}/>
+          <Route path="/shipping" element={<ShippingPage/>}/>   
+          <Route path='/orders' element={<MyOrdersPage/>}/>      
+          <Route path="/productInfo/:id" element={<ProductOverview/>} />
+        </Routes>  
+      </div>
+        
+    </div>
+  ); 
 }
