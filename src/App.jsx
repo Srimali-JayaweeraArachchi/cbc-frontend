@@ -4,14 +4,17 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <LoginPage />
-      <HomePage />
+      <BrowserRouter>
+        <LoginPage />
+        <HomePage />
+      </BrowserRouter>
     </>
   )
 }
