@@ -112,6 +112,7 @@ export default function AdminProductsPage() {
                       className="text-blue-500 hover:text-blue-700"
                       title="Edit"
                       onClick={()=>{
+                        //move to edit product page
                         navigate("/admin/products/editProduct" , {state : {product : product}});
                       }}
                     >

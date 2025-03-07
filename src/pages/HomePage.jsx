@@ -6,6 +6,7 @@ import ProductPage from './home/product';
 import Cart from './home/cart';
 import ShippingPage from './home/shipping';
 import MyOrdersPage from './home/orders';
+
 export default function HomePage() {
   return (
     <div className="h-screen w-full">
